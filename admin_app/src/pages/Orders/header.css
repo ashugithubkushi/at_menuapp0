@@ -1,0 +1,58 @@
+.navbar {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ebf5eb;
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.badge {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.btn-outline-primary,
+.btn-outline-danger {
+  margin: 0 0.5rem;
+}
+
+
+.search-button {
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove border */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make it inline */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Add cursor pointer */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.search-button:hover {
+  background-color: #ebf5eb; /* Darker green on hover */
+}
+
+
+
+/* .header-fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;   
+  border: 1px solid #ebf5eb;
+} */

@@ -1,0 +1,96 @@
+/* table {
+    width: 100%; 
+    border-collapse: collapse; 
+    border: #ddd9d9;
+    
+
+  }
+
+  .table-bordered{
+    border: #ddd9d9;
+  }
+  
+  tbody{
+    align-items: first baseline;
+  }
+  
+  tbody:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  th, td, tr {
+   padding: 20px;
+    text-align: center; 
+    border: 1px solid #ddd;
+  }
+
+ 
+  th {
+    background-color: #b1a4a4;
+    font-weight: bold;
+    } */
+
+
+
+
+    /*  */
+    .table-responsive {
+      overflow-x: auto;
+    }
+    
+    .table-bordered {
+      /* border-collapse: collapse; */
+      width: 100%;
+      border: #e6dddd;
+    }
+    
+    .table-bordered th,
+    .table-bordered td {
+      border: 1px solid #ddd;
+      padding: 15px;
+    }
+    
+    .table-bordered th {
+      background-color: #b1a4a4;
+      font-weight: bold;
+    }
+
+    .table-bordered {
+      padding: 20px;
+    }
+
+    .tbody:nth-child(odd) {
+      background-color: "#f2f2f2";
+      padding: 30px;
+  }
+
+  .tbody{
+    align-content: flex-start;
+  }
+  
+.form-control {
+    font-size: 12px; /* Decrease font size */
+    padding: 4px 8px; /* Adjust padding */
+    height: 40px; /* Adjust height */
+    width: 50px;
+}
+
+/* .header{
+  position: fixed;
+}
+  
+
+thead{
+position: fixed;
+margin-top: 64px;
+} */
+  /* Media queries for responsive behavior */
+  @media only screen and (max-width: 600px) {
+    /* Styles for smaller screens remain the same */
+  }
+
+
+
+
+  
+

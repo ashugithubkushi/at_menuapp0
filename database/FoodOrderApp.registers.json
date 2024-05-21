@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "6606bda76f05279ee7c4603e"
+  },
+  "username": "Ashwini",
+  "email": "ashwini@123",
+  "createPassword": "987654321",
+  "confirmPassword": "987654321",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660bf45d8edb082a604edd67"
+  },
+  "username": "Ash",
+  "email": "ash@123",
+  "createPassword": "123456789",
+  "confirmPassword": "123456789",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660bfdc18edb082a604edd77"
+  },
+  "username": "Ashwini",
+  "email": "Ashwini@gmail.com",
+  "createPassword": "12345678",
+  "confirmPassword": "12345678",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660bfe428edb082a604edd7c"
+  },
+  "username": "Ashwini",
+  "email": "Ashu@123",
+  "createPassword": "12345678",
+  "confirmPassword": "123456788",
+  "__v": 0
+}]

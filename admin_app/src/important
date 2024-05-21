@@ -1,0 +1,177 @@
+// https://chat.openai.com/c/6cc49608-e8b2-4c29-a2d3-8c68494936fd
+https://chat.openai.com/c/6cc49608-e8b2-4c29-a2d3-8c68494936fd
+
+//github hoisting
+https://www.youtube.com/watch?v=s8ZLs6oerYQ
+
+//auth0
+https://www.youtube.com/watch?v=T1wbLNvQImk
+
+// redux
+https://www.youtube.com/watch?v=bWySY0OGTn4
+
+
+//Admin
+https://www.youtube.com/watch?v=SZXZRRZML2g
+
+npm install @mui/material @emotion/react @emotion/styled
+
+npm audit fix
+
+import React, { useState } from 'react'
+import Layout from '../components/Layouts/Layout'
+import Displaydata from './Displaydata.jsx/Displaydata';
+import { Link } from 'react-router-dom';
+
+const Home = () => {
+
+    return (
+
+    
+        <div className="background">
+          <div className="scrolling">
+      <h2>Select your delicious food item here</h2>
+    </div>
+    
+    
+        <Layout>
+            <form action="">
+            <div className='body'>
+    
+            <div className='input'>
+              <div>
+              <label htmlFor=""><h6>Elders</h6></label>
+                <select >
+                <option></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="4">5</option>
+                <option value="4">6</option>
+                <option value="4">7</option>
+                <option value="4">8</option>
+                <option value="4">9</option>
+                <option value="4">10</option>
+              </select>
+            </div>
+          </div>
+
+          <div className='input'>
+          <div>
+          <label htmlFor=""><h6>Childrens</h6></label>
+            <select
+            >
+              <option></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="4">5</option>
+              <option value="4">6</option>
+              <option value="4">7</option>
+              <option value="4">8</option>
+              <option value="4">9</option>
+              <option value="4">10</option>
+            </select>
+          </div>
+        </div>
+        
+
+
+         
+
+    
+
+     {/* food item selection */}
+        <div className='input'>
+          <div >
+          <label htmlFor=""><h6>Food menu</h6></label>
+            <select 
+            >
+              <option></option>
+              <option value="1">Pizza</option>
+              <option value="2">Burger</option>
+              <option value="3">Drinks</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div className='input' >
+        
+          <div >
+          <label htmlFor=""><h6>Item Count</h6></label>
+            <select
+            >
+              <option></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="4">5</option>
+              <option value="4">6</option>
+              <option value="4">7</option>
+              <option value="4">8</option>
+              <option value="4">9</option>
+              <option value="4">10</option>
+            </select>
+          </div>
+        </div>
+
+
+       <Link to={"/displaydata"} type='submit'  className='btn btn-success'>Submit</Link>
+        </div>
+        </form>
+
+
+    <Displaydata>
+    <form action="" className='form-displaydata'>
+    <div className='displaydata'>
+
+            <div className='displaydata-input'><h3>Display data</h3>
+              <h6>Elders : <input type="" /></h6>
+              <h6>Children : <input type="" /></h6>
+              <h6>Selected item : <input type="" /></h6>
+              <h6>Item count : <input type="" /></h6>
+            </div>
+
+    </div>
+    </form>
+    </Displaydata>
+
+
+    </Layout>
+    </div>
+  )
+}
+
+export default Home
+
+
+
+
+
+<!--  orders count and elders data -->
+
+{orders.map((item, i) => {
+              
+  return (
+    <tbody>
+      <tr key={i}>
+{/* Count update */}
+        <td className="" rowSpan={2}>
+          {i + 1}
+        </td>
+
+
+{/* Elder count update  */}
+        <td>Elders</td>
+        <td>{item.numberOfElders}</td>
+        {/* <td>{item.pizzaCount}</td>
+        <td>{item.burgerCount}</td>
+        <td>{item.chatCount}</td>
+        <td>{item.coffeCount}</td>
+        <td>{item.teaCount}</td>
+        <td>{item.coolDrinkCount}</td> */}
+

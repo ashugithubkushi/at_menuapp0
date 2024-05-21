@@ -1,0 +1,593 @@
+<div className='body m-3 p-2'>
+      {/* <a class="navbar-brand text-dark pl-3" href="#"><h5><strong className='m-2'>Dashboard</strong></h5></a> */}
+       <div className='body-container'>
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand text-dark pl-3" href="#"><strong>Dashboard</strong></a>  
+    {/* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> */}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <li class="nav-item rounded">
+          {/* <a class="nav-link text-dark p-2" aria-current="page" href="#">
+            <i className='bi bi-search'></i>
+            Search</a> */}
+            <nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+        </li>
+      {/* <li class="nav-item mx-1 border">
+          <a class="nav-link text-dark p-2" aria-current="page" href="#">Account</a>
+        </li> */}
+        {/* <li class="nav-item border bg-success">
+          <a class="nav-link text-dark p-2" aria-current="page" href="#">Logout</a>
+        </li> */}
+
+        {/* <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li> */}
+       
+      </ul>
+      {/* <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> */}
+     
+    </div>
+  </div>
+</nav>
+      <div className="container-fluid">
+        <div className="row">
+
+          <Link to="subcomponent1" className="col-12 col-sm-6 col-md-4 col-lg-3 p-3 bg-light">
+            <div className="d-flex justify-content-between p-4 aligh-items-center bg-white border border-secondary shadow-sm">
+            {/* <i className='bi bi-currency-dollar fs-1 text-success'></i> */}
+            <i class="bi bi-bar-chart" aria-hidden="true"></i>
+            <div>
+            <span>Orders</span>
+              <h2>123</h2>
+            </div>
+           </div>
+          </Link>
+          
+          <Link to="subcomponent2" className="col-12 col-sm-6 col-md-4 col-lg-3 p-3 bg-light">
+            <div className="d-flex justify-content-between p-4 aligh-items-center bg-white border border-secondary shadow-sm">
+            <i className='bi bi-currency-dollar fs-1 text-danger'></i>
+            <div>
+            <span>Orders</span>
+              <h2>123</h2>
+            </div>
+           </div>
+          </Link>
+          
+          <Link to="subcomponent3" className="col-12 col-sm-6 col-md-4 col-lg-3 p-3 bg-light">
+            <div className="d-flex justify-content-between p-4 aligh-items-center bg-white border border-secondary shadow-sm">
+            <i className='bi bi-currency-dollar fs-1 text-secondary'></i>
+            <div>
+            <span>Orders</span>
+              <h2>123</h2>
+            </div>
+           </div>
+          </Link>
+          
+          <Link to="subcomponent4" className="col-12 col-sm-6 col-md-4 col-lg-3 p-3 bg-light">
+            <div className="d-flex justify-content-between p-4 aligh-items-center bg-white border border-secondary shadow-sm">
+            <i className='bi bi-currency-dollar fs-1 text-primary'></i>
+            <div>
+            <span>Orders</span>
+              <h2>123</h2>
+            </div>
+           </div>
+          </Link>
+        </div>
+        </div>
+        </div>
+
+        <div className="row">
+          <div className="col-12 col-md-8 p-3">
+            <LineChat/>
+          </div>
+          
+          <div className="col-12 col-md-4 p-3">
+            <PieChat/>
+          </div>
+
+      
+      </div>
+
+
+      
+    </div>
+
+
+
+
+
+    home page of menu-app
+    import React, { useState } from "react";
+// import Layout from '../components/Layouts/Layout'
+import "./Home.css";
+// import { Link } from "react-router-dom";
+import Layout from "../Layouts/Layout";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import Modal from "react-modal";
+import LineChat from "../LineChart";
+
+const Home = () => {
+  const navigate = useNavigate();
+
+  const [numberOfElders, setNumberOfElders] = useState();
+  const [snacksElder, setSnacksElder] = useState("");
+  const [drinksElder, setDrinksElder] = useState("");
+  const [totalItemElder, setTotalItemElder] = useState();
+
+  const [numberOfChild, setNumberOfChild] = useState();
+  const [snacksChildren, setSnacksChildren] = useState("");
+  const [drinksChildren, setDrinksChildren] = useState("");
+  const [totalItemChildren, setTotalItemChildren] = useState();
+
+  const [visible, setVisible] = useState(false);
+
+  // console.log("numberOfElders", numberOfElders);
+  // console.log("snacksElder", snacksElder);
+  // console.log("drinksElder", drinksElder);
+  // console.log("totalItemElder", totalItemElder);
+  // console.log("numberOfChild", numberOfChild);
+  // console.log("snacksChildren", snacksChildren);
+  // console.log("drinksChildren", drinksChildren);
+  // console.log("totalItemChildren", totalItemChildren);
+
+  const Submit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3000/createOrder", {
+        numberOfElders,
+        snacksElder,
+        drinksElder,
+        totalItemElder,
+        numberOfChild,
+        snacksChildren,
+        drinksChildren,
+        totalItemChildren,
+      })
+      .then((result) => {
+        console.log(result);
+        navigate("/menu");
+      })
+      .catch((err) => console.log(err));
+  };
+
+  // const popup = document.getElementById("popup");
+
+  // function openPopup(){
+  //      popup.classList.add("open-popup")
+  // }
+  // function closePopup(){
+  //      popup.classList.remove("open-popup")
+  // }
+
+//   const [count, setCount] = useState(0);
+// handleIncrement = () => {
+//   setCount(count + 1);
+// }
+// handleDecrement = () => {
+//   setCount(count + 1);
+// }
+
+  return (
+//     <Layout>
+
+
+//       <div>
+//         {/* <marquee direction="right">Select your delicious snack here</marquee> */}
+//         <div className="background">
+//           {/* <div className="scrolling"> */}
+//           <marquee direction="right">
+//             <h4>Select your delicious snack here</h4>
+//           </marquee>
+//           {/* </div> */}
+
+//           <form className="formdata">
+//             <label className="m-3 p-4">
+//               <h5>Elders</h5>
+//               {/* <input
+//                 style={{ width: 250 }}
+//                 className="form-control"
+//                 type="dropdown"
+//                 name="elders"
+//                 onChange={(e) => setNumberOfElders(e.target.value)}
+//               /> */}
+//               <select
+//                 style={{ width: 150 }}
+//                 className="form-control"
+//                 type="dropdown"
+//                 name="elders"
+//                 onChange={(e) => setNumberOfElders(e.target.value)}
+//               >
+//                 <option value="N/A">N/A</option>
+//                 <option value="1">1</option>
+//                 <option value="2">2</option>
+//                 <option value="3">3</option>
+//                 <option value="4">4</option>
+//                 <option value="5">5</option>
+//                 <option value="6">6</option>
+//                 <option value="7">7</option>
+//                 <option value="8">8</option>
+//                 <option value="9">9</option>
+//                 <option value="10">10</option>
+//               </select>
+//             </label>
+
+
+//             <label className="m-3 p-4">
+//               <h5>Snacks</h5>
+//               <select
+//                 style={{ width: 150 }}
+//                 className="form-control"
+//                 type="dropdown"
+//                 name="snacks"
+//                 onChange={(e) => setSnacksElder(e.target.value)}
+//               >
+//                 <option value="N/A">N/A</option>
+//                 <option value="Pizza">Pizza</option>
+//                 <option value="Burger">Burger</option>
+//                 <option value="Chats">Chats</option>
+//               </select>
+//             </label>
+
+//             <label className="m-3 p-4">
+//               <h5>Drinks</h5>
+//               <select
+//                 style={{ width: 150 }}
+//                 className="form-control"
+//                 type="dropdown"
+//                 name="drinks"
+//                 onChange={(e) => setDrinksElder(e.target.value)}
+//               >
+//                 <option value="N/A">N/A</option>
+//                 <option value="Coffe">Coffe</option>
+//                 <option value="Tea">Tea</option>
+//                 <option value="Cool drink">Cool drink</option>
+//               </select>
+//             </label>
+
+//             <label className="m-3 p-4">
+//               <h5>Item count</h5>
+//               <select
+//                 style={{ width: 150 }}
+//                 className="form-control"
+//                 type="number"
+//                 name="itemcount"
+//                 onChange={(e) => setTotalItemElder(e.target.value)}
+//               >
+//                 <option value="N/A">N/A</option>
+//                 <option value="1">1</option>
+//                 <option value="2">2</option>
+//                 <option value="3">3</option>
+//                 <option value="4">4</option>
+//                 <option value="5">5</option>
+//                 <option value="6">6</option>
+//                 <option value="7">7</option>
+//                 <option value="8">8</option>
+//                 <option value="9">9</option>
+//                 <option value="10">10</option>
+//               </select>
+//             </label>
+
+//             <div>
+//               <h4>Selected data:</h4>
+//               <p>Elder: {numberOfElders}</p>
+//               <p>Snacks: {snacksElder}</p>
+//               <p>Drinks: {drinksElder}</p>
+//               <p>Item Count: {totalItemElder}</p>
+//             </div>
+//             {/* <Link to='/menu' type="button" className="btn btn-success">Submit</Link> */}
+//           </form>
+
+//           <form className="formdata">
+//             <label className="m-3 p-4">
+//               <h5>Childrens</h5>
+//               <select
+//                 style={{ width: 150 }}
+//                 className="form-control"
+//                 type="number"
+//                 name="elders"
+//                 onChange={(e) => setNumberOfChild(e.target.value)}
+//               >
+//                 <option value="N/A">N/A</option>
+//                 <option value="1">1</option>
+//                 <option value="2">2</option>
+//                 <option value="3">3</option>
+//                 <option value="4">4</option>
+//                 <option value="5">5</option>
+//                 <option value="6">6</option>
+//                 <option value="7">7</option>
+//                 <option value="8">8</option>
+//                 <option value="9">9</option>
+//                 <option value="10">10</option>
+//               </select>
+//             </label>
+
+//             <label className="m-3 p-4">
+//               <h5>Snacks</h5>
+//               <select
+//                 style={{ width: 150 }}
+//                 className="form-control"
+//                 type="dropdown"
+//                 name="snacks"
+//                 onChange={(e) => setSnacksChildren(e.target.value)}
+//               >
+//                 <option value="N/A">N/A</option>
+//                 <option value="Pizza">Pizza</option>
+//                 <option value="Burger">Burger</option>
+//                 <option value="Chats">Chats</option>
+//               </select>
+//             </label>
+
+//             <label className="m-3 p-4">
+//               <h5>Drinks</h5>
+//               <select
+//                 style={{ width: 150 }}
+//                 className="form-control"
+//                 type="dropdown"
+//                 name="drinks"
+//                 onChange={(e) => setDrinksChildren(e.target.value)}
+//               >
+//                 <option value="N/A">N/A</option>
+//                 <option value="Coffe">Coffe</option>
+//                 <option value="Tea">Tea</option>
+//                 <option value="Cool drink">Cool drink</option>
+//               </select>
+//             </label>
+
+//             <label className="m-3 p-4">
+//               <h5>Item count</h5>
+//               <select
+//                 style={{ width: 150 }}
+//                 className="form-control"
+//                 type="number"
+//                 name="itemcount"
+//                 onChange={(e) => setTotalItemChildren(e.target.value)}
+//               >
+//                 <option value="N/A">N/A</option>
+//                 <option value="1">1</option>
+//                 <option value="2">2</option>
+//                 <option value="3">3</option>
+//                 <option value="4">4</option>
+//                 <option value="5">5</option>
+//                 <option value="6">6</option>
+//                 <option value="7">7</option>
+//                 <option value="8">8</option>
+//                 <option value="9">9</option>
+//                 <option value="10">10</option>
+//               </select>
+//             </label>
+
+//             <div>
+//               <h4>Selected data</h4>
+//               <p>Children: {numberOfChild}</p>
+//               <p>Snacks: {snacksChildren}</p>
+//               <p>Drinks: {drinksChildren}</p>
+//               <p>Item Count: {totalItemChildren}</p>
+//             </div>
+//             <button onClick={Submit} type="button" className="btn btn-success">
+//               Submit
+//             </button>
+//          {/* <Link to='/menu' type="button" className="btn btn-success">Submit</Link> */}
+//           </form>
+
+//           <div>
+//             <button type="submit" class="btn" onClick={() => setVisible(true)}>
+//               Submit
+//             </button>
+//             <Modal
+//               isOpen={visible}
+//               onRequestClose={() => setVisible(false)}
+//               style={{
+//                 overlay: {
+//                   position: "fixed",
+//                   zIndex: 1020,
+//                   top: 0,
+//                   left: 0,
+//                   width: "100vw",
+//                   height: "100vh",
+//                   background: "rgba(255, 255, 255, 0.75)",
+//                   display: "flex",
+//                   alignItems: "center",
+//                   justifyContent: "center",
+//                 },
+//                 content: {
+//                   background: "white",
+//                   width: "45rem",
+//                   maxWidth: "calc(100vw - 2rem)",
+//                   maxHeight: "calc(100vh - 2rem)",
+//                   overflowY: "auto",
+//                   position: "relative",
+//                   border: "1px solid #ccc",
+//                   borderRadius: "0.3rem",
+//                 },
+//               }}
+//             >
+//               <h1>Success</h1>
+//               <p>Your Order has been submitted! <br />
+//               Thank you. </p>
+//               <button type="button" onClick={() => setVisible(false)}>
+//                 OK
+//               </button>
+//             </Modal>
+//           </div>
+//         </div>
+//       </div>
+
+
+//       {/* <div className='d-flex justify-content-center align-items-center' style={{height: "100px"}}>
+// <div>
+//   <h1 className='text-center' style={{fontSize: "70px"}}>{count}</h1>
+//   <div className='d-flex'>
+//     <button onClick={handleIncrement()} className='btn btn-success me-3'>+</button>
+//     <button onClick={handleDecrement()} className='btn btn-danger me-3'>-</button>
+//      </div>
+// </div>
+//       </div> */}
+//     </Layout>
+
+<div className="body" >
+        {/* <header className="header"><h1>Dashboard Page</h1></header>
+        <hr /> */}
+{/* 
+       <div className="container-fluid vh-100">
+          <div className="row g-3 my-2">
+
+        <Link to="image1" className="col-md-4 p-4 ">
+            <div className="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                <div>
+              <div className="image-container"> 
+                <img src="https://cdn-icons-png.flaticon.com/128/7692/7692806.png" alt="Image 1" />
+                  </div>
+                    <h3 className="fs-2">Image1</h3>
+                    <p className="fs-5">Title name</p>
+                </div>
+                <i className="bi bi-house p-3 fs-1"></i>
+            </div>
+        </Link>
+
+        <Link to="image2" className="col-md-4 p-4 ">
+            <div className="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                <div>
+                    <div className="image-container"> 
+                <img src="https://cdn-icons-png.flaticon.com/128/7692/7692806.png" alt="Image 1" />
+                  </div>
+                    <h3 className="fs-2">Image2</h3>
+                    <p className="fs-5">Title name</p>
+                </div>
+                <i className="bi bi-house p-3 fs-1"></i>
+            </div>
+        </Link>
+
+       
+        <Link to="image3" className="col-md-4 p-4 ">
+            <div className="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                <div>
+                    <div className="image-container"> 
+                <img src="https://cdn-icons-png.flaticon.com/128/7692/7692806.png" alt="Image 1" />
+                  </div>
+                    <h3 className="fs-2">Image3</h3>
+                    <p className="fs-5">Title name</p>
+                </div>
+                <i className="bi bi-house p-3 fs-1"></i>
+            </div>
+        </Link>
+
+       
+        <div className="col-md-4 p-4 ">
+            <div className="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                <div>
+                    <div className="image-container"> 
+                <img src="https://cdn-icons-png.flaticon.com/128/7692/7692806.png" alt="Image 1" />
+                  </div>
+                    <h3 className="fs-2">Image1</h3>
+                    <p className="fs-5">Title name</p>
+                </div>
+                <i className="bi bi-house p-3 fs-1"></i>
+            </div>
+        </div>
+
+       
+        <div className="col-md-4 p-4 ">
+            <div className="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                <div>
+                    <div className="image-container"> 
+                <img src="https://cdn-icons-png.flaticon.com/128/7692/7692806.png" alt="Image 1" />
+                  </div>
+                    <h3 className="fs-2">Image1</h3>
+                    <p className="fs-5">Title name</p>
+                </div>
+                <i className="bi bi-house p-3 fs-1"></i>
+            </div>
+        </div>
+
+       
+        <div className="col-md-4 p-4 ">
+            <div className="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                <div>
+                    <div className="image-container"> 
+                <img src="https://cdn-icons-png.flaticon.com/128/7692/7692806.png" alt="Image 1" />
+                  </div>
+                    <h3 className="fs-2">Image1</h3>
+                    <p className="fs-5">Title name</p>
+                </div>
+                <i className="bi bi-house p-3 fs-1"></i>
+            </div>
+        </div>
+
+       
+        <div className="col-md-4 p-4 ">
+            <div className="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                <div>
+                    <div className="image-container"> 
+                <img src="https://cdn-icons-png.flaticon.com/128/7692/7692806.png" alt="Image 1" />
+                  </div>
+                    <h3 className="fs-2">Image1</h3>
+                    <p className="fs-5">Title name</p>
+                </div>
+                <i className="bi bi-house p-3 fs-1"></i>
+            </div>
+        </div>
+
+       
+        <div className="col-md-4 p-4 ">
+            <div className="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                <div>
+                    <div className="image-container"> 
+                <img src="https://cdn-icons-png.flaticon.com/128/7692/7692806.png" alt="Image 1" />
+                  </div>
+                    <h3 className="fs-2">Image1</h3>
+                    <p className="fs-5">Title name</p>
+                </div>
+                <i className="bi bi-house p-3 fs-1"></i>
+            </div>
+        </div>
+
+       
+        <div className="col-md-4 p-4 ">
+            <div className="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                <div>
+                    <div className="image-container"> 
+                <img src="https://cdn-icons-png.flaticon.com/128/7692/7692806.png" alt="Image 1" />
+                  </div>
+                    <h3 className="fs-2">Image1</h3>
+                    <p className="fs-5">Title name</p>
+                </div>
+                <i className="bi bi-house p-3 fs-1"></i>
+            </div>
+        </div>
+
+       
+
+     </div>
+      </div> */}
+
+
+</div>
+  );
+};
+
+export default Home;

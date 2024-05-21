@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "661f76a472c8086b43cdc425"
+  },
+  "username": "abcde",
+  "email": "abcde@gmail.com",
+  "password": "Abcde123",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "661f7ba5c681a4993e694ae1"
+  },
+  "username": "Zzzz",
+  "email": "Zzzz@gmail.com",
+  "password": "Zzzz1234",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6620b9319830dc7bcf9984de"
+  },
+  "username": "Ashu",
+  "email": "Ashu@gmail.com",
+  "password": "123Ashu123",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66335d8ef186e2f8022d9240"
+  },
+  "username": "Ashwini",
+  "email": "Ashwini@gmail.com",
+  "password": "Ashwini123",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663874a8ea7f036786d512b8"
+  },
+  "username": "Xyz",
+  "email": "Xyz@gmail.com",
+  "password": "Xyz54321",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6638d1b1c5fb977f6cc21025"
+  },
+  "username": "SureshM",
+  "email": "SureshM@gmail.com",
+  "password": "Suresh123",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663c56378c3cee321cf288d4"
+  },
+  "username": "Abcd",
+  "email": "Abcd@gmail.com",
+  "password": "Abcd1234",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663c95daf880573870f915fc"
+  },
+  "username": "Dddd",
+  "email": "Dddd@gmail.com",
+  "password": "Dddd4321",
+  "__v": 0
+}]

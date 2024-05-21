@@ -1,0 +1,1244 @@
+//  <label class="m-3 p-4">
+//             <h5>Snacks</h5>
+//             <div class="form-control"
+//               style={{ width: 200 }}
+//               type="dropdown"
+//               name="snacks"
+//               onChange={(e) => setSnacksElder(e.target.value)}
+//             >
+//               {/* <option value="N/A">N/A</option> */}
+//               {/* <option value="Pizza">Pizza</option> */}
+            
+//               {/* <option class="input" value="Pizza">{`Pizza (${pizzaCount})`}</option>
+//               <button onClick={handleCountIncrement}>Add Pizza</button>
+//              */}
+//               {/* <option value="Burger">Burger</option>
+//               <option value="Chats">Chats</option> */}
+//             </div>
+//             {/* <button onClick={handleCountIncrement()}>-</button> */}
+//           </label>
+
+
+
+
+
+
+
+
+
+// // another method of snacks items:
+
+// {
+//   const [itemCount, setItemCount] = useState(0);
+//   const [userCount, setUserCount] = useState(1);
+
+//   // Define update functions for item and user count
+//   const handleItemCountChange = (newCount) => {
+//     setItemCount(newCount);
+//   };
+
+//   const handleUserCountChange = (newCount) => {
+//     setUserCount(newCount);
+//   };
+
+//   // Calculate total count
+//   // const burgerCount
+//   const totalCount = itemCount + -userCount;
+
+//   /*/
+
+
+//   <div>
+//     {/* <input type="text" className="form-control" value={itemCount} onChange={(e) => handleItemCountChange(e.target.value)} /> */}
+
+//     <label className="m-2 p-2 d-flex">
+//       <h2>Snacks:</h2>
+//       <select
+//         type="text"
+//         className="form-control d-flex"
+//         value={itemCount}
+//         onChange={(e) => handleItemCountChange(e.target.value)}
+//       >
+//         <option value="N/A">N/A</option>
+//         <option value="Pizza">Pizza</option>
+//         <option value="Burger">Burger</option>
+//         <option value="Chats">Chats</option>
+//       </select>
+//       <input
+//         type="number"
+//         className="form-control d-flex"
+//         value={userCount}
+//         onChange={(e) => handleUserCountChange(e.target.value)}
+//       />{" "}
+//       <br /> <br />
+//     </label>
+//     <p>Pizza Count: {pizzaCount}</p>
+//     <p>Burger Count: {burgerCount}</p>
+//     <p>Chat Count: {chatCount}</p>
+//     <p>Total Count: {totalCount}</p>
+
+//     <label className="m-2 p-2 d-flex">
+//       <h2>Drinks:</h2>
+//       <select
+//         type="text"
+//         className="form-control d-flex"
+//         value={itemCount}
+//         onChange={(e) => handleItemCountChange(e.target.value)}
+//       >
+//         <option value="N/A">N/A</option>
+//         <option value="Coffe">Coffe</option>
+//         <option value="Tea">Tea</option>
+//         <option value="Cool drink">Cool Drink</option>
+//       </select>
+//       <input
+//         type="number"
+//         className="form-control d-flex"
+//         value={userCount}
+//         onChange={(e) => handleUserCountChange(e.target.value)}
+//       />{" "}
+//       <br /> <br />
+//     </label>
+//     {/* <p>Item Name: {itemCount}</p>
+//   <p>User Count: {userCount}</p> */}
+//     <p>Coffe Count: {pizzaCount}</p>
+//     <p>Tea Count: {burgerCount}</p>
+//     <p>Cool drink Count: {chatCount}</p>
+//     <p>Total Count: {totalCount}</p>
+//     {/* (Optional) Input elements for user interaction */}
+//     {/* <label htmlFor=""></label> */}
+//   </div>
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// imp:-
+// <div className="d-flex">
+//   <button className="btn" onClick={handleCountDecrement}>-</button>
+//   <option value="Chat">{`Chat (${chatCount})`}</option>
+//   <button className="btn" onClick={handleCountIncrement}>+</button>
+//   <p> = {chatCount}</p>
+//   </div> */}
+
+
+
+
+//   all code :-
+//   import React, { useState } from "react";
+// import "./Home.css";
+// // import { Link } from "react-router-dom";
+// // import Layout from "../components/Layouts/Layout";
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+// import Modal from "react-modal";
+
+// const Home = () => {
+//   const navigate = useNavigate();
+
+//   const [numberOfElders, setNumberOfElders] = useState();
+//   const [snacksElder, setSnacksElder] = useState("");
+//   const [drinksElder, setDrinksElder] = useState("");
+//   const [totalItemElder, setTotalItemElder] = useState();
+
+//   const [numberOfChild, setNumberOfChild] = useState();
+//   const [snacksChildren, setSnacksChildren] = useState("");
+//   const [drinksChildren, setDrinksChildren] = useState("");
+//   const [totalItemChildren, setTotalItemChildren] = useState();
+
+//   const [visible, setVisible] = useState(false);
+
+//   // console.log("numberOfElders", numberOfElders);
+//   // console.log("snacksElder", snacksElder);
+//   // console.log("drinksElder", drinksElder);
+//   // console.log("totalItemElder", totalItemElder);
+//   // console.log("numberOfChild", numberOfChild);
+//   // console.log("snacksChildren", snacksChildren);
+//   // console.log("drinksChildren", drinksChildren);
+//   // console.log("totalItemChildren", totalItemChildren);
+
+//   const Submit = (e) => {
+//     e.preventDefault();
+//     axios
+//       .post("http://localhost:3000/createOrder", {
+//         numberOfElders,
+//         snacksElder,
+//         drinksElder,
+//         totalItemElder,
+//         numberOfChild,
+//         snacksChildren,
+//         drinksChildren,
+//         totalItemChildren,
+//       })
+//       .then((result) => {
+//         console.log(result);
+//         navigate("/menu");
+//       })
+//       .catch((err) => console.log(err));
+//   };
+
+//   // const popup = document.getElementById("popup");
+
+//   // function openPopup(){
+//   //      popup.classList.add("open-popup")
+//   // }
+//   // function closePopup(){
+//   //      popup.classList.remove("open-popup")
+//   // }
+
+//   // const [num, setNum] = useState(0);
+//   // let incNum = () => {
+//   //   if (num < 10) {
+//   //     setNum(Number(num) + 1);
+//   //   }
+//   // };
+//   // let decNum = () => {
+//   //   if (num > 0) {
+//   //     setNum(num - 1);
+//   //   }
+//   // };
+//   // let handleChange = (e) => {
+//   //   setNum(e.target.value);
+//   // };
+
+//   // update of snacks count
+
+//   const [pizzaCount, setPizzaCount] = useState(0);
+//   const [burgerCount, setBurgerCount] = useState(0);
+//   const [chatCount, setChatCount] = useState(0);
+//   const [coffeCount, setCoffeCount] = useState(0);
+//   const [teaCount, setTeaCount] = useState(0);
+//   const [coolDrinkCount, setCoolDrinkCount] = useState(0);
+
+//   const handleCountIncrement = () => {
+//     setPizzaCount(pizzaCount + 1);
+//     setBurgerCount(burgerCount + 1);
+//     setChatCount(chatCount + 1);
+//     setCoffeCount(coffeCount + 1);
+//     setTeaCount(teaCount + 1);
+//     setCoolDrinkCount(coolDrinkCount + 1);
+//   };
+//   const handleCountDecrement = () => {
+//     setPizzaCount(pizzaCount - 1);
+//     setBurgerCount(burgerCount - 1);
+//     setChatCount(chatCount - 1);
+//     setCoffeCount(coffeCount - 1);
+//     setTeaCount(teaCount - 1);
+//     setCoolDrinkCount(coolDrinkCount - 1);
+//   };
+//   return (
+//     <div>
+//       {/* <marquee direction="right">Select your delicious snack here</marquee> */}
+//       <div className="background">
+//         {/* <div className="scrolling"> */}
+//         <marquee direction="right">
+//           <h4>Select your delicious snack here</h4>
+//         </marquee>
+//         {/* </div> */}
+
+//         {/* <form className="formdata"> */}
+//         <label className="m-3 p-4">
+//           <h5>Elders</h5>
+
+//           {/* <input
+//                 style={{ width: 250 }}
+//                 className="form-control"
+//                 type="dropdown"
+//                 name="elders"
+//                 onChange={(e) => setNumberOfElders(e.target.value)}
+//               /> */}
+
+//           <select
+//             style={{ width: 200 }}
+//             className="form-control"
+//             type="dropdown"
+//             name="elders"
+//             onChange={(e) => setNumberOfElders(e.target.value)}
+//           >
+//             <option value="N/A">N/A</option>
+//             <option value="1">1</option>
+//             <option value="2">2</option>
+//             <option value="3">3</option>
+//             <option value="4">4</option>
+//             <option value="5">5</option>
+//             <option value="6">6</option>
+//             <option value="7">7</option>
+//             <option value="8">8</option>
+//             <option value="9">9</option>
+//             <option value="10">10</option>
+//           </select>
+//         </label>
+
+//         <div
+//           className="form-control m-3 p-4"
+//           style={{ width: 250 }}
+//           // type="dropdown"
+//           name="snacks"
+//           onChange={(e) => setTotalItemElder(e.target.value)}
+//         >
+//           <label htmlFor="">
+//             <h2>Snacks:</h2>
+//           </label>
+
+//           <div className="d-flex">
+//             <th>Pizza</th>
+//             <button className="btn" name="" onClick={handleCountDecrement}>
+//               -
+//             </button>
+//             <option
+//               value="Pizza"
+//               onChange={(e) => setPizzaCount(e.target.value)}
+//             >{`${pizzaCount}`}</option>
+//             <button className="btn" onClick={handleCountIncrement}>
+//               +
+//             </button>
+//             <p> = {pizzaCount}</p>
+//           </div>
+
+//           <div className="d-flex">
+//             <th>Burger</th>
+//             <button className="btn" name="" onClick={handleCountDecrement}>
+//               -
+//             </button>
+//             <option
+//               value="Burger"
+//               onChange={(e) => burgerCount(e.target.value)}
+//             >{`${burgerCount}`}</option>
+//             <button className="btn" onClick={handleCountIncrement}>
+//               +
+//             </button>
+//             <p> = {pizzaCount}</p>
+//           </div>
+
+//           <div className="d-flex">
+//             <th>Chats</th>
+//             <button className="btn" onClick={handleCountDecrement}>
+//               -
+//             </button>
+//             <td>
+//               <option
+//                 value="Chats"
+//                 onChange={(e) => setChatCount(e.target.value)}
+//               >{`${chatCount}`}</option>
+//             </td>
+//             <button className="btn" onClick={handleCountIncrement}>
+//               +
+//             </button>
+//             <p> = {chatCount}</p>
+//           </div>
+//         </div>
+
+//         <br />
+
+//         <div
+//           className="form-control m-3 p-4"
+//           style={{ width: 250 }}
+//           // type="dropdown"
+//           name="drinks"
+//           onChange={(e) => setTotalItemElder(e.target.value)}
+//         >
+//           <label htmlFor="">
+//             <h2>Drinks:</h2>
+//           </label>
+
+//           <div className="d-flex">
+//             <th>Coffe</th>
+//             <button className="btn" name="" onClick={handleCountDecrement}>
+//               -
+//             </button>
+//             <option
+//               value="Coffe"
+//               onChange={(e) => coffeCount(e.target.value)}
+//             >{`${coffeCount}`}</option>
+//             <button className="btn" onClick={handleCountIncrement}>
+//               +
+//             </button>
+//             <p> = {coffeCount}</p>
+//           </div>
+
+//           <div className="d-flex">
+//             <th>Tea</th>
+//             <button className="btn" name="" onClick={handleCountDecrement}>
+//               -
+//             </button>
+//             <option
+//               value="Tea"
+//               onChange={(e) => teaCount(e.target.value)}
+//             >{`${teaCount}`}</option>
+//             <button className="btn" onClick={handleCountIncrement}>
+//               +
+//             </button>
+//             <p> = {teaCount}</p>
+//           </div>
+
+//           <div className="d-flex">
+//             <th>Cooldrink</th>
+//             <button className="btn" name="" onClick={handleCountDecrement}>
+//               -
+//             </button>
+//             <option
+//               value="Cool Drink"
+//               onChange={(e) => coolDrinkCount(e.target.value)}
+//             >{`${coolDrinkCount}`}</option>
+//             <button className="btn" onClick={handleCountIncrement}>
+//               +
+//             </button>
+//             <p> = {coolDrinkCount}</p>
+//           </div>
+//         </div>
+//       <div />
+//     </div>
+
+//       {/* <form action="">
+//             {" "}
+//             <div className="col-xl-1">
+//               <div class="input-group">
+//                 <div class="input-group-prepend">
+//                   <button
+//                     class="btn btn-outline-primary"
+//                     type="button"
+//                     onClick={decNum}
+//                   >
+//                     -
+//                   </button>
+//                 </div>
+//                 <input
+//                   type="text"
+//                   class="form-control"
+//                   value={num}
+//                   onChange={handleChange}
+//                 />
+//                 <div class="input-group-prepend">
+//                   <button
+//                     class="btn btn-outline-primary"
+//                     type="button"
+//                     onClick={incNum}
+//                   >
+//                     +
+//                   </button>
+//                 </div>
+//               </div>
+//             </div>
+//           </form> */}
+
+//       {/* <label className="m-3 p-4">
+//             <h5>Drinks</h5>
+//             <select
+//               style={{ width: 200 }}
+//               className="form-control"
+//               type="dropdown"
+//               name="drinks"
+//               onChange={(e) => setDrinksElder(e.target.value)}
+//             >
+//               <option value="N/A">N/A</option>
+//               <option value="Coffe">Coffe</option>
+//               <option value="Tea">Tea</option>
+//               <option value="Cool drink">Cool drink</option>
+//             </select>
+//           </label> */}
+
+//       {/* <label className="m-3 p-4">
+//             <h5>Item count</h5>
+//             <select
+//               style={{ width: 200 }}
+//               className="form-control"
+//               type="number"
+//               name="itemcount"
+//               onChange={(e) => setTotalItemElder(e.target.value)}
+//             >
+//               <option value="N/A">N/A</option>
+//               <option value="1">1</option>
+//               <option value="2">2</option>
+//               <option value="3">3</option>
+//               <option value="4">4</option>
+//               <option value="5">5</option>
+//               <option value="6">6</option>
+//               <option value="7">7</option>
+//               <option value="8">8</option>
+//               <option value="9">9</option>
+//               <option value="10">10</option>
+//             </select>
+//           </label> */}
+
+//       {/* <div>
+//             <h4>Selected data:</h4>
+//             <p>Elder: {numberOfElders}</p>
+//             <p>Snacks: {snacksElder}</p>
+//             <p>Drinks: {drinksElder}</p>
+//             <p>Item Count: {totalItemElder}</p>
+//           </div> */}
+//       {/* <Link to='/menu' type="button" className="btn btn-success">Submit</Link> */}
+//       {/* </form> */}
+
+//       <form className="formdata">
+//         <label className="m-3 p-4">
+//           <h5>Childrens</h5>
+//           <select
+//             style={{ width: 200 }}
+//             className="form-control"
+//             type="number"
+//             name="elders"
+//             onChange={(e) => setNumberOfChild(e.target.value)}
+//           >
+//             <option value="N/A">N/A</option>
+//             <option value="1">1</option>
+//             <option value="2">2</option>
+//             <option value="3">3</option>
+//             <option value="4">4</option>
+//             <option value="5">5</option>
+//             <option value="6">6</option>
+//             <option value="7">7</option>
+//             <option value="8">8</option>
+//             <option value="9">9</option>
+//             <option value="10">10</option>
+//           </select>
+//         </label>
+
+//         <label className="m-3 p-4">
+//           <h5>Snacks</h5>
+//           <select
+//             style={{ width: 200 }}
+//             className="form-control"
+//             type="dropdown"
+//             name="snacks"
+//             onChange={(e) => setSnacksChildren(e.target.value)}
+//           >
+//             <option value="N/A">N/A</option>
+//             <option value="Pizza">Pizza</option>
+//             <option value="Burger">Burger</option>
+//             <option value="Chats">Chats</option>
+//           </select>
+//         </label>
+
+//         <label className="m-3 p-4">
+//           <h5>Drinks</h5>
+//           <select
+//             style={{ width: 200 }}
+//             className="form-control"
+//             type="dropdown"
+//             name="drinks"
+//             onChange={(e) => setDrinksChildren(e.target.value)}
+//           >
+//             <option value="N/A">N/A</option>
+//             <option value="Coffe">Coffe</option>
+//             <option value="Tea">Tea</option>
+//             <option value="Cool drink">Cool drink</option>
+//           </select>
+//         </label>
+
+//         <label className="m-3 p-4">
+//           <h5>Item count</h5>
+//           <select
+//             style={{ width: 200 }}
+//             className="form-control"
+//             type="number"
+//             name="itemcount"
+//             onChange={(e) => e.target.value}
+//           >
+//             <option value="N/A">N/A</option>
+//             <option value="1">1</option>
+//             <option value="2">2</option>
+//             <option value="3">3</option>
+//             <option value="4">4</option>
+//             <option value="5">5</option>
+//             <option value="6">6</option>
+//             <option value="7">7</option>
+//             <option value="8">8</option>
+//             <option value="9">9</option>
+//             <option value="10">10</option>
+//           </select>
+//         </label>
+
+//         <div>
+//           <h4>Selected data</h4>
+//           <p>Children: {numberOfChild}</p>
+//           <p>Snacks: {snacksChildren}</p>
+//           <p>Drinks: {drinksChildren}</p>
+//           <p>Item Count: {totalItemChildren}</p>
+//         </div>
+//         {/* <button onClick={Submit} type="button" className="btn btn-success">
+//               Submit
+//             </button> */}
+//         {/* <Link to='/menu' type="button" className="btn btn-success">Submit</Link> */}
+//       </form>
+
+//       <div>
+//         <button
+//           type="submit"
+//           className="btn btn-success"
+//           onClick={() => setVisible(true)}
+//         >
+//           Submit
+//         </button>
+//         <Modal
+//           isOpen={visible}
+//           onRequestClose={() => setVisible(false)}
+//           style={{
+//             overlay: {
+//               position: "fixed",
+//               zIndex: 1020,
+//               top: 0,
+//               left: 0,
+//               width: "100vw",
+//               height: "100vh",
+//               background: "rgba(255, 255, 255, 0.75)",
+//               display: "flex",
+//               alignItems: "center",
+//               justifyContent: "center",
+//             },
+//             content: {
+//               background: "white",
+//               width: "45rem",
+//               maxWidth: "calc(100vw - 2rem)",
+//               maxHeight: "calc(100vh - 2rem)",
+//               overflowY: "auto",
+//               position: "relative",
+//               border: "1px solid #ccc",
+//               borderRadius: "0.3rem",
+//             },
+//           }}
+//         >
+//           <h1>Success</h1>
+//           <p>
+//             Your Order has been submitted! <br />
+//             Thank you.{" "}
+//           </p>
+//           <button
+//             type="button"
+//             className="btn btn-success"
+//             onClick={() => setVisible(false)}
+//           >
+//             OK
+//           </button>
+//         </Modal>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+
+
+
+// // childrens data 635
+// <div className="d-flex">
+//           {/* <form className="formdata"> */}
+//           <label className="m-3 p-4">
+//             <h2 className="color">Childrens</h2>
+            
+
+//             <select
+//               style={{ width: 150, height: 50 }}
+//               className="form-control d-flex"
+//               type="dropdown"
+//               name="elders"
+//               onChange={(e) => setNumberOfChild(e.target.value)}
+//             >
+//               <option value="N/A">N/A</option>
+//               <option value="1">1</option>
+//               <option value="2">2</option>
+//               <option value="3">3</option>
+//               <option value="4">4</option>
+//               <option value="5">5</option>
+//               <option value="6">6</option>
+//               <option value="7">7</option>
+//               <option value="8">8</option>
+//               <option value="9">9</option>
+//               <option value="10">10</option>
+//             </select>
+//           </label>
+
+//           <div className=" m-3 p-4">
+//             <h2 className="color">Snacks</h2>
+//             <div className="form-control">
+//               <div className="d-flex">
+//                 <th>Pizza</th>
+//                 <button className="btn" name="" onClick={PizzaCountDecre1}>
+//                   -
+//                 </button>
+//                 <option
+//                   value="Pizza"
+//                   onChange={(e) => setPizzaCount1(e.target.value)}
+//                 >{`${pizzaCount1}`}</option>
+//                 <button className="btn" onClick={PizzaCountIncre1}>
+//                   +
+//                 </button>
+//                 {/* <p> = {pizzaCount1}</p> */}
+//               </div>
+
+//               <div className="d-flex">
+//                 <th>Burger</th>
+//                 <button className="btn" name="" onClick={BurgerCountDecre1}>
+//                   -
+//                 </button>
+//                 <option
+//                   value="Burger"
+//                   onChange={(e) => burgerCount1(e.target.value)}
+//                 >{`${burgerCount1}`}</option>
+//                 <button className="btn" onClick={BurgerCountIncre1}>
+//                   +
+//                 </button>
+//                 {/* <p> = {burgerCount1}</p> */}
+//               </div>
+
+//               <div className="d-flex">
+//                 <th>Chats</th>
+//                 <button className="btn" onClick={ChatCountDecre1}>
+//                   -
+//                 </button>
+//                 <td>
+//                   <option
+//                     value="Chats"
+//                     onChange={(e) => setChatCount1(e.target.value)}
+//                   >{`${chatCount1}`}</option>
+//                 </td>
+//                 <button className="btn" onClick={ChatCountIncre1}>
+//                   +
+//                 </button>
+//                 {/* <p> = {chatCount1}</p> */}
+//               </div>
+//             </div>
+//           </div>
+
+//           <div className=" m-3 p-4">
+//             <h2 className="color">Beverages</h2>
+//             <div className="form-control">
+//               <div className="d-flex">
+//                 <th>Coffe</th>
+//                 <button className="btn" name="" onClick={CoffeCountDecre1}>
+//                   -
+//                 </button>
+//                 <option
+//                   value="Coffe"
+//                   onChange={(e) => coffeCount1(e.target.value)}
+//                 >{`${coffeCount1}`}</option>
+//                 <button className="btn" onClick={CoffeCountIncre1}>
+//                   +
+//                 </button>
+//                 {/* <p> = {coffeCount1}</p> */}
+//               </div>
+
+//               <div className="d-flex">
+//                 <th>Tea</th>
+//                 <button className="btn" name="" onClick={TeaCountDecre1}>
+//                   -
+//                 </button>
+//                 <option
+//                   value="Tea"
+//                   onChange={(e) => teaCount1(e.target.value)}
+//                 >{`${teaCount1}`}</option>
+//                 <button className="btn" onClick={TeaCountIncre1}>
+//                   +
+//                 </button>
+//                 {/* <p> = {teaCount1}</p> */}
+//               </div>
+
+//               <div className="d-flex">
+//                 <th>Cooldrink</th>
+//                 <button className="btn" name="" onClick={CoolDrinkCountDecre1}>
+//                   -
+//                 </button>
+//                 <option
+//                   value="Cool Drink"
+//                   onChange={(e) => coolDrinkCount1(e.target.value)}
+//                 >{`${coolDrinkCount1}`}</option>
+//                 <button className="btn" onClick={CoolDrinkCountIncre1}>
+//                   +
+//                 </button>
+//                 {/* <p> = {coolDrinkCount1}</p> */}
+//               </div>
+//             </div>
+//           </div>
+//           <div />
+//           </div>
+
+
+
+
+
+
+// 409
+// <section class="features d-flex">
+//             {/* <form className="formdata"> */}
+//             <label className="m-3 p-4">
+//             <h2 className="color">Person</h2>
+
+//               {/* <h2 className="color">Elders</h2> */}
+//               {/* <div className=" m-3 p-4"><h2>Snacks</h2></div> */}
+//               <select
+//                 style={{ width: 230, height: 40 }}
+//                 className="form-control d-flex"
+//                 type="dropdown"
+//                 name="elders"
+//                 onChange={(e) => setNumberOfElders(e.target.value)}
+//               >
+//                 <option value="N/A">N/A</option>
+//                 <option value="Elders">Elders</option>
+//                 <option value="Childrens">Childrens</option>
+//               </select>
+//             </label>
+
+//             {/* added elders and childerns in one row */}
+//             <label className="m-3 p-4">
+//               {/* <h2 className="color">Elders</h2> */}
+//               <h2 className="color">Count</h2>
+
+//               {/* <div className=" m-3 p-4"><h2>Snacks</h2></div> */}
+//               <select
+//                 style={{ width: 230, height: 40 }}
+//                 className="form-control d-flex"
+//                 type="dropdown"
+//                 name="elders"
+//                 onChange={(e) => setNumberOfElders(e.target.value)}
+//               >
+//                 <option value="N/A">N/A</option>
+//                 <option value="1">1</option>
+//                 <option value="2">2</option>
+//                 <option value="3">3</option>
+//                 <option value="4">4</option>
+//                 <option value="5">5</option>
+//                 <option value="6">6</option>
+//                 <option value="7">7</option>
+//                 <option value="8">8</option>
+//                 <option value="9">9</option>
+//                 <option value="10">10</option>
+//               </select>
+//             </label>
+
+
+
+            
+//             <div className="m-3 p-4">
+//               <h2 className="color">Snacks</h2>
+//               <div className="items p-3">
+//                 <div className="d-flex">
+//                   <th className="m-3">Pizza</th>
+//                   <button className="btn btn-success m-2" name="" onClick={PizzaCountDecre}>
+//                     -
+//                   </button> <br />
+//                   <option
+//                     value="Pizza"
+//                     onChange={(e) => setPizzaCount(e.target.value)}
+//                   >{`${pizzaCount}`}</option> <br />
+//                   <button className="btn btn-success m-2" onClick={PizzaCountIncre}>
+//                     +
+//                   </button>
+//                   {/* <p> = {pizzaCount}</p> */}
+//                 </div>
+
+//                 <div className="d-flex">
+//                   <th className="m-3">Burger</th>
+//                   <button className="btn btn-success m-2" name="" onClick={BurgerCountDecre}>
+//                     -
+//                   </button>
+//                   <option
+//                     value="Burger"
+//                     onChange={(e) => burgerCount(e.target.value)}
+//                   >{`${burgerCount}`}</option>
+//                   <button className="btn btn-success m-2" onClick={BurgerCountIncre}>
+//                     +
+//                   </button>
+//                   {/* <p> = {burgerCount}</p> */}
+//                 </div>
+
+//                 <div className="d-flex">
+//                   <th className="m-3">Chats</th>
+//                   <button className="btn btn-success m-2" onClick={ChatCountDecre}>
+//                     -
+//                   </button>
+//                   <td>
+//                     <option
+//                       value="Chats"
+//                       onChange={(e) => setChatCount(e.target.value)}
+//                     >{`${chatCount}`}</option>
+//                   </td>
+//                   <button className="btn btn-success m-2" onClick={ChatCountIncre}>
+//                     +
+//                   </button>
+//                   {/* <p> = {chatCount}</p> */}
+//                 </div>
+//               </div>
+//             </div>
+
+//             <div className="m-3 p-4">
+//               <h2 className="color">Beverages</h2>
+//               <div className="items p-3">
+//                 <div className="d-flex">
+//                   <th  className="m-3">Coffe</th>
+//                   <button className="btn btn-success m-2" name="" onClick={CoffeCountDecre}>
+//                     -
+//                   </button>
+//                   <option
+//                     value="Coffe"
+//                     onChange={(e) => coffeCount(e.target.value)}
+//                   >{`${coffeCount}`}</option>
+//                   <button className="btn btn-success m-2" onClick={CoffeCountIncre}>
+//                     +
+//                   </button>
+//                   {/* <p> = {coffeCount}</p> */}
+//                 </div>
+
+//                 <div className="d-flex">
+//                   <th  className="m-3">Tea</th>
+//                   <button className="btn btn-success m-2" name="" onClick={TeaCountDecre}>
+//                     -
+//                   </button >
+//                   <option
+//                     value="Tea"
+//                     onChange={(e) => teaCount(e.target.value)}
+//                   >{`${teaCount}`}</option>
+//                   <button className="btn btn-success m-2" onClick={TeaCountIncre}>
+//                     +
+//                   </button>
+//                   {/* <p> = {teaCount}</p> */}
+//                 </div>
+
+//                 <div className="d-flex">
+//                   <th className="m-3">Cooldrink</th> 
+//                   <button className="btn btn-success m-2" name="" onClick={CoolDrinkCountDecre}>
+//                     -
+//                   </button>
+//                   <option
+//                     value="Cool Drink"
+//                     onChange={(e) => coolDrinkCount(e.target.value)}
+//                   >{`${coolDrinkCount}`}</option>
+//                   <button className="btn btn-success m-2" onClick={CoolDrinkCountIncre}>
+//                     +
+//                   </button>
+//                   {/* <p> = {coolDrinkCount}</p> */}
+//                 </div>
+//               </div>
+//             </div>
+//             {/* <div /> */}
+         
+//           {/* </section>
+
+
+//         <section> */}
+//           {/* children */} 
+
+
+
+          
+//         </section>
+
+
+
+
+
+
+
+
+// // 1000
+// import React, { useState } from 'react';
+// import './register.css';
+// import axios from "axios";
+// // import { Link } from 'react-router-dom';
+// import { useNavigate } from "react-router-dom";
+
+// function Register() {
+//   const navigate = useNavigate();
+//   const [username, setUsername] = useState('');
+//   const [email, setEmail] = useState('');
+//   const [createPassword, setCreatePassword] = useState('');
+//   const [confirmPassword, setConfirmPassword] = useState('');
+//   const [usernameError, setUsernameError] = useState('');
+//   const [emailError, setEmailError] = useState('');
+//   const [passwordError, setPasswordError] = useState('');
+//   const [confirmPasswordError, setConfirmPasswordError] = useState('');
+
+//   const validateUsername = (username) => {
+//     // Example: Username must be at least 4 characters long
+//     return username.length >= 4;
+//   };
+
+//   const validateEmail = (email) => {
+//     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     return regex.test(email);
+//   };
+
+//   const validatePassword = (password) => {
+//     // Example: Password must be at least 8 characters long
+//     return password.length >= 8;
+//   };
+
+//   const validateConfirmPassword = (confirmPassword) => {
+//     return confirmPassword === createPassword;
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     setUsernameError('');
+//     setEmailError('');
+//     setPasswordError('');
+//     setConfirmPasswordError('');
+
+//     if (!validateUsername(username)) {
+//       // setUsernameError('Username must be at least 4 characters long');
+//       setUsernameError('Enter username');
+//       return;
+//     }
+
+//     if (!validateEmail(email)) {
+//       setEmailError('Please enter a valid email address');
+//       return;
+//     }
+
+//     if (!validatePassword(createPassword)) {
+//       setPasswordError('Password must be at least 8 characters long');
+//       return;
+//     }
+
+//     if (!validateConfirmPassword(confirmPassword)) {
+//       setConfirmPasswordError('Passwords do not match');
+//       return;
+//     }
+//     else {
+//       alert('Registered successfully');
+     
+//     }
+
+//     // Submit the form or perform further actions
+//     console.log('Username:', username);
+//     console.log('Email:', email);
+//     console.log('Create Password:', createPassword);
+//     console.log('Confirm Password:', confirmPassword);
+//   };
+
+//   const Submit = (e) => {
+//     e.preventDefault();
+//     // axios
+//     //   .post("http://localhost:3000/createRegister", {
+//     //     username,
+//     //     email,
+//     //     createPassword,
+//     //     confirmPassword
+//     //   })
+//     //   .then((result) => {
+//     //     console.log(result);
+//     //     alert("Registered successfully");
+//     //     navigate("/");
+//     //   })
+//     //   .catch((err) => console.log(err));
+//   };
+
+//   return (
+//     <div>
+//       <div className="register py-5" style={{ minHeight: "100vh" }}>
+//         <br />
+//         <br />
+//         <div className="registerform my-5 w-25 rounded-3 mx-auto p-4">
+//       <form onSubmit={handleSubmit}>
+//       <h1 className='text-white text-center'>Registration Form</h1> <br />
+
+//       <div className="registervalue">
+//         <div>
+//           {/* <label>Username:</label> */}
+//           <input
+//             type="text"
+//             value={username}
+//             onChange={(e) => setUsername(e.target.value)}
+//             placeholder='UserName'
+//           />
+//           <div className="error">{usernameError}</div> <br />
+//         </div>
+//         <div>
+//           {/* <label>Email:</label> */}
+//           <input
+//             type="email"
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//             placeholder='Email'
+//           />
+//           <div className="error">{emailError}</div><br />
+//         </div>
+//         <div>
+//           {/* <label>Create Password:</label> */}
+//           <input
+//             type="password"
+//             value={createPassword}
+//             onChange={(e) => setCreatePassword(e.target.value)}
+//             placeholder='Create Password'
+//           />
+//           <div className="error">{passwordError}</div><br />
+//         </div>
+//         <div>
+//           {/* <label>Confirm Password:</label> */}
+//           <input
+//             type="password"
+//             value={confirmPassword}
+//             onChange={(e) => setConfirmPassword(e.target.value)}
+//             placeholder='Confirm Password'
+//           />
+//           <div className="error">{confirmPasswordError}</div><br /><br />
+//         </div>
+//         </div> 
+//         {/* <button type="submit">Register</button> */}
+
+//         <button
+//               // to="/register"
+//               className="border-0 px-3 py-1 text-white fw-small w-100 text-center text-decoration-none fs-5"
+//               style={{ background: "#5a8077", borderRadius: "5px" }}
+//               type="submit"
+//               onClick={Submit}
+//             >
+//               Register
+//             </button>
+//       </form>
+//       </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Register;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { Link, useNavigate } from "react-router-dom";
+// import './login.css';
+// import axios from "axios";
+
+// function Login() {
+//   const navigate = useNavigate();
+
+//   const [email, setEmail] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [emailError, setEmailError] = useState('');
+//   const [passwordError, setPasswordError] = useState('');
+
+//   const validateEmail = (email) => {
+//     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     return regex.test(email);
+//   };
+
+//   const validatePassword = (password) => {
+//     // Password must be at least 8 characters long, including at least one uppercase letter, one lowercase letter, and one number
+//     const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+//     return regex.test(password);
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     setEmailError('');
+//     setPasswordError('');
+
+//     if (!validateEmail(email)) {
+//       setEmailError('Please enter a valid email address');
+//       return;
+//     }
+
+//     if (!validatePassword(password)) {
+//       setPasswordError('Password must be at least 8 characters long, including at least one uppercase letter, one lowercase letter, and one number');
+//       return;
+//     }
+
+//     // Submit the form data to your backend using axios
+//     axios.post("http://localhost:3000/createLogin", {
+//       email,
+//       password,
+//     })
+//       .then((response) => {
+//         console.log(response);
+//         if (response.data.success) { // Assuming your backend returns a success flag
+//           alert("Logged in successfully");
+//           navigate("/listscomponents");
+//         } else {
+//           alert("Invalid login credentials"); // Handle failed login attempt
+//         } 
+//       })
+//       .catch((error) => {
+//         console.error(error);
+//         alert("An error occurred. Please try again later."); // Handle unexpected errors
+//       });
+
+//     // Removed unnecessary console logs and the `addPosts` function (use axios for backend communication)
+//   };
+
+//   return (
+//     <div>
+//       <div className="login py-5" style={{ minHeight: '100vh' }}>
+//         <br />
+//         <br />
+//         <div className="loginform my-5 w-25 rounded-3 mx-auto p-4">
+//           <form onSubmit={handleSubmit}>
+//             <h2 className='text-white text-center'>Login Form</h2><br />
+//             <div>
+//               {/* <label>Email:</label> */}
+//               <input
+//                 type="email"
+//                 value={email}
+//                 onChange={(e) => setEmail(e.target.value)}
+//                 placeholder='Enter email address'
+//               />
+//               <div className="error">{emailError}</div>
+//             </div>
+//             <br />
+//             <div>
+//               {/* <label>Password:</label> */}
+//               <input
+//                 type="password"
+//                 value={password}
+//                 onChange={(e) => setPassword(e.target.value)}
+//                 placeholder='Enter password'
+//               />
+//               <div className="error">{passwordError}</div>
+//             </div>
+//             <div className='forgot-password  mt-3 text-end'>
+//               <Link to="/forgotpassword">Forgot password?</Link>
+//             </div>
+
+//             <Link
+//               // to="/listcomponents" 
+//               className='border-0 px-3 py-1 text-white fw-small w-100 text-center text-decoration-none fs-5'
+//               style={{ background: "#5a8077", borderRadius: "5px" }}
+//               type='submit'
+//               onClick={handleSubmit}
+//             >
+//               Login
+//             </Link>
+
+//             <br />
+//             <br />
+//             <h5 className='text-center text-white'>or</h5>
+//             <br />
+//             <Link
+//               to="/register"
+//               className='border-0 px-3 py-1 text-white fw-small w-100 text-center text-decoration-none fs-5'
+//               style={{ background: "#5a8077", borderRadius: "5px" }}
+//               type='submit'
+//             >
+//               Register 
+//            </Link>
+
+//        </form>
+//      </div>
+//      </div>
+//      </div>
+//   );
+// }
+
+// export default Login;

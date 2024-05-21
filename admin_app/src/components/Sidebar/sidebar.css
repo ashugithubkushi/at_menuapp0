@@ -1,0 +1,146 @@
+/* .sidebar ul li:hover {
+    background-color: rgb(117, 117, 117);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover a{
+    color: white;
+}
+
+.active {
+    background-color: rgb(117, 117, 117);
+    border-radius: 5px;
+    color: white;
+} */
+
+
+.container{
+    /* padding: 20px;
+    margin: 20px; */
+    background-color: red;
+}
+
+
+
+.nav{
+    height: 60px;
+    background-color: white;
+    /* display: flex; */
+    justify-content: space-between;
+    /* padding: 0px 20px; */
+    color: black;
+}
+
+.nav h2 {
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    /* align-items: center; */
+    gap: 25px;
+}
+
+.nav i.bi{
+    font-size: 25px;
+    color: black;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav ul li {
+    cursor: pointer;
+}
+
+/* sidebar */
+.container {
+    background-color: white;
+    /* background: linear-gradient(90deg, rgb(120, 141, 122), #33523a); */
+    color: white;
+    /* width: 100px; */
+    
+    height: calc(100vh - 60px);
+    /* overflow-y: scroll; */
+    overflow-x: hidden;
+    /* border: #cbbecb; */
+    border-top: 1px solid #cbbecb;
+}
+
+
+
+.sidebar-container::-webkit-scrollbar{
+    display: none;
+}
+
+.nav-option {
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+    gap: 20px;
+    width: 180px;
+    /* margin-right: 20px; */
+    /* margin-top: 20px; */
+}
+
+.nav-option:hover, .nav-option1:hover i.bi{
+    background-color: #d6cfd6;
+    /* background-color: #cfc1cf; */
+    color: black;
+    cursor: pointer;
+}
+
+.nav-option i.bi {
+    color: black;
+    font-size: 20px;
+    margin-right: 12px !important;
+}
+
+@media screen and (min-width: 768px) {
+    .navCollaps{
+        width: 50px;
+    }
+    .navCollaps .nav-option h3{
+        display: none;
+    }
+    .navCollaps .nav-option{
+        padding: 10px;
+    }
+}
+
+
+.img{
+    width: 10px;
+    height: 20px;
+}
+
+/* table */
+table {
+    border-collapse: collapse; /* Removes double borders between cells */
+    width: 100%; /* Makes the table full width */
+  }
+  
+  th,
+  td {
+    border: 1px solid #ddd; /* Adds a 1px solid border to each cell */
+    padding: 8px; /* Adds padding to cells */
+    text-align: left; /* Aligns text to the left */
+  }
+  
+  th {
+    background-color: #f2f2f2; /* Light gray background for headers */
+    font-weight: bold; /* Makes header text bold */
+  }
+
+
+/*  */
+
+
+  

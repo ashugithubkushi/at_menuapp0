@@ -1,0 +1,66 @@
+body{
+  font-family: sans-serif;
+}
+
+.trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+  /* color: #6c8f7f; */
+}
+
+.logo{
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+.sm-logo {
+  display: none;
+  
+}
+
+.ant-layout-sider-collapsed .sm-logo {
+  display: block;
+}
+.ant-layout-sider-collapsed .lg-logo {
+  display: none;
+}
+
+.ant-menu-title-content{
+  font-size: 16px;
+}
+
+.logo{
+  background-color: #6c8f7f;
+  margin: 0;
+  height: 64px;
+}
+
+main{
+  height: 80vh;
+  /* overflow-y: scroll;  */
+  background-color: transparent;
+  /* background-color: rgb(225, 220, 227); */
+}
+
+main::-webkit-scrollbar {
+width: 0px;
+}
+
+
+.ant-layout-header div .badge{
+  top: 16px;
+  right: -6px;
+}

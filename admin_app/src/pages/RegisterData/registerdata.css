@@ -1,0 +1,29 @@
+table {
+    width: 100%; /* Make the table full width */
+    border-collapse: collapse; /* Remove spacing between cells */
+  }
+  
+  tbody:nth-child(odd) {
+    background-color: #f2f2f2; /* Light gray background for even rows */
+  }
+  
+  th, td, tr {
+    /* padding: 0.625em; Add some padding to cells */
+    padding: 20px;
+    text-align: center; /* Align content to the left */
+    border: 1px solid #ddd; /* Add a border for better visibility */
+  }
+
+ 
+  
+  th {
+    background-color: #b1a4a4; /* Light gray background for headers */
+    font-weight: bold; /* Bold text for headers */
+    }
+  
+  
+  
+  /* Media queries for responsive behavior */
+  @media only screen and (max-width: 600px) {
+    /* Styles for smaller screens remain the same */
+  }

@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "6606bd766f05279ee7c4603c"
+  },
+  "email": "Ashu@gmail.com",
+  "password": "12345678",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660beb058edb082a604edd4a"
+  },
+  "email": "Ashu@gmail.com",
+  "password": "12345678",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660bebcb8edb082a604edd4c"
+  },
+  "email": "Ashwini@gmail.com",
+  "password": "123456789",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660bf3f98edb082a604edd65"
+  },
+  "email": "Ashu@gmail.com",
+  "password": "123456789",
+  "__v": 0
+}]

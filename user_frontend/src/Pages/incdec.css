@@ -1,0 +1,41 @@
+/* IncDec.css */
+
+.increment-decrement {
+    margin-bottom: 20px;
+  }
+  
+  .increment-decrement label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .increment-decrement div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .increment-decrement button {
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #5a5a5a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .increment-decrement button:hover {
+    background-color: #333;
+  }
+  
+  .increment-decrement span {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  
+  .increment-decrement p {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  

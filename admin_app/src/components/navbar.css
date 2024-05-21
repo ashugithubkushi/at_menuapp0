@@ -1,0 +1,97 @@
+.container-fluid {
+  /* display: flex; */
+  /* justify-content: center;  */
+  align-items: center; /* Center the content vertically */
+  /* height: 64px; */
+  /* background: fixed; */
+  background-color: rgba(255, 255, 255);  
+  margin: -10px; 
+  /* position: fixed; */
+   /* margin-right: 50px; */
+}
+
+.text {
+  text-align: center; /* Center the text horizontally */
+}
+
+
+.text {
+  background-image: url('C:\Users\KITS\at_menuapp\admin_app\src\image\Vector Smart Object 1.png');
+
+  background-size: 35px 35px; /* Set the height and width of the image */
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
+font-size: xx-large;
+color: #385a29;
+}
+
+.navbar-toggler{
+  margin-right: 30px;
+  margin-left: 0px;
+}
+
+
+.custom-search-form {
+  background-color: transparent; /* Set background color to transparent */
+ 
+}
+
+.custom-search-form input[type="search"] {
+  border: none; /* Remove default border */
+  border: 1px solid #ccc; /* Add bottom border for visual separation */
+  border-radius: 5px; /* Optionally remove border-radius */
+  width: 300px;
+}
+
+
+
+.navbar-fixed {
+  /* position: fixed; */
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  z-index: 1000;   
+}
+
+/* .form {
+  margin-right: 4rem;
+} */
+
+
+
+
+/* .navbar-container {
+  margin: auto;
+  position: fixed;
+} */
+
+.navbar-form-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* padding: 5px 15px; */
+}
+
+.custom-search-form {
+  margin-left: auto; /* Push the form to the right */
+}
+
+/* .container-fluid{
+  position: fixed;
+} */
+
+@media screen and (max-width: 768px) {
+  .navbar-form-container {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .custom-search-form {
+    margin-left: 0; /* Reset margin for smaller screens */
+    margin-top: 0; /* Add space between form and other content */
+  }
+}
+
+

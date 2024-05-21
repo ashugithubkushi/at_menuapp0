@@ -1,0 +1,40 @@
+
+
+.dropdown {
+    /* margin-bottom: 5px; */
+    border: none;
+   
+  }
+  
+  .dropdown-container {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+   
+  }
+  
+  .dropdown select {
+    /* width: 100%; */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .dropdown p {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .dropdown-container {
+    /* display: flex; */
+   
+  }
+  
+  .dropdown {
+    margin-right: 20px; /* Add margin to create space between the dropdowns */
+  }
+  
+
+  
+  
